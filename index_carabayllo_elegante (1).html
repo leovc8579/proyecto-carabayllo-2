@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Conoce la historia, ubicación, patrimonio cultural y gastronomía de Carabayllo, Lima, Perú.">
+  <title>Carabayllo | Memoria, identidad y territorio</title>
+  <style>
+    :root{
+      --forest:#172820; --forest2:#243c30; --gold:#b99a62; --paper:#f5f2eb;
+      --white:#fffdf8; --ink:#202720; --muted:#687067; --line:#ded8cb;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:86px}
+    body{margin:0;background:var(--paper);color:var(--ink);font-family:Georgia,"Times New Roman",serif;line-height:1.65}
+    img{display:block;width:100%;object-fit:cover}
+    a{color:inherit}
+    .sans,nav,button,.eyebrow,.meta,.tag,footer{font-family:Arial,Helvetica,sans-serif}
+    .topline{height:4px;background:var(--gold)}
+    header{position:sticky;top:0;z-index:20;background:rgba(23,40,32,.97);color:white;border-bottom:1px solid #ffffff20;backdrop-filter:blur(10px)}
+    .nav-wrap{max-width:1180px;margin:auto;padding:0 24px;min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{font-family:Arial,Helvetica,sans-serif;font-size:14px;letter-spacing:.17em;font-weight:700;text-decoration:none;white-space:nowrap}
+    .brand span{display:block;color:#d5bf91;font-size:9px;letter-spacing:.23em;font-weight:400;margin-top:4px}
+    nav{display:flex;align-items:center;gap:22px;font-size:12px;letter-spacing:.04em}
+    nav a{text-decoration:none;color:#e9e8df;transition:color .2s}
+    nav a:hover,nav a.active{color:#dfc58f}
+    .menu-btn{display:none;background:none;color:white;border:1px solid #ffffff55;padding:8px 11px;border-radius:3px}
+    .hero{background:var(--forest);color:white;position:relative;overflow:hidden}
+    .hero-inner{max-width:1180px;margin:auto;display:grid;grid-template-columns:.92fr 1.08fr;min-height:570px;align-items:stretch}
+    .hero-copy{padding:90px 48px 80px 24px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start}
+    .eyebrow{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:700}
+    h1{font-size:clamp(42px,5.2vw,72px);font-weight:400;line-height:1.02;letter-spacing:-.04em;margin:22px 0}
+    h1 em{font-weight:400;color:#d7c39b}
+    .hero-copy p{max-width:470px;color:#d8dfd7;font-size:17px;margin:0 0 28px}
+    .button{display:inline-flex;align-items:center;gap:12px;padding:13px 18px;background:var(--gold);color:#172820;text-decoration:none;font:700 11px Arial,sans-serif;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--gold);transition:all .2s}
+    .button:hover{background:transparent;color:#f1d9a8}
+    .hero-photo{min-height:480px;position:relative}
+    .hero-photo img{height:100%;position:absolute;inset:0}
+    .hero-photo:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--forest) 0%,transparent 34%),linear-gradient(0deg,#111a1270,transparent 55%)}
+    .photo-note{position:absolute;z-index:1;right:24px;bottom:24px;font:10px Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#fff}
+    .facts{max-width:1132px;margin:-1px auto 0;padding:0 24px;display:grid;grid-template-columns:repeat(3,1fr);position:relative;z-index:2}
+    .fact{background:var(--white);border:1px solid var(--line);padding:24px 28px}
+    .fact+.fact{border-left:0}
+    .fact strong{display:block;color:var(--forest2);font-size:27px;font-weight:400;line-height:1.2}
+    .fact span{font:10px Arial,sans-serif;color:var(--muted);letter-spacing:.12em;text-transform:uppercase}
+    main{max-width:1132px;margin:auto;padding:0 24px}
+    section{padding:100px 0 20px}
+    .section-head{display:grid;grid-template-columns:100px 1fr;gap:20px;align-items:start;margin-bottom:34px}
+    .section-number{font:12px Arial,sans-serif;color:var(--gold);letter-spacing:.12em;padding-top:11px}
+    h2{font-size:clamp(32px,4vw,48px);line-height:1.1;font-weight:400;letter-spacing:-.025em;margin:0 0 12px;color:var(--forest)}
+    .section-intro{max-width:700px;color:var(--muted);font-size:16px;margin:0}
+    .history-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:var(--white);border:1px solid var(--line);overflow:hidden;transition:transform .25s,box-shadow .25s}
+    .card:hover{transform:translateY(-4px);box-shadow:0 14px 30px #17282012}
+    .card img{height:225px;transition:transform .5s}
+    .card:hover img{transform:scale(1.035)}
+    .card-image{overflow:hidden}
+    .card-body{padding:22px 22px 24px}
+    .tag{font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:#8a744b;font-weight:700}
+    h3{font-size:23px;font-weight:400;line-height:1.2;color:var(--forest);margin:10px 0}
+    .card p{font-size:14px;color:#596158;margin:0}
+    .map-layout{display:grid;grid-template-columns:.7fr 1.3fr;gap:28px;align-items:stretch}
+    .map-copy{background:var(--forest);color:white;padding:34px}
+    .map-copy h3{color:white;font-size:28px}
+    .map-copy p{color:#d7ded6;font-size:15px}
+    .map-copy .meta{font-size:10px;color:#d8c08e;letter-spacing:.15em;text-transform:uppercase;margin-top:25px}
+    .map-frame{border:0;width:100%;height:100%;min-height:390px;background:#e7e3da}
+    .culture-banner{display:grid;grid-template-columns:1fr 1fr;background:#e8e3d8;margin-top:24px}
+    .culture-banner img{height:100%;min-height:280px}
+    .culture-banner div{padding:34px}
+    .culture-banner h3{font-size:28px}
+    .culture-banner p{font-size:15px;color:#596158}
+    .food-note{border-left:3px solid var(--gold);padding:15px 20px;margin:28px 0 0;color:#586056;font-size:14px;background:#eeeadf}
+
+    .history-timeline{border-left:1px solid var(--line);margin:30px 0 0 10px;padding-left:25px}
+    .history-timeline p{margin:0 0 12px;color:#596158}
+
+    .sources{border-top:1px solid var(--line);margin-top:70px;padding:28px 0 50px;color:var(--muted);font:12px/1.8 Arial,sans-serif}
+    .sources a{color:var(--forest2)}
+    footer{background:var(--forest);color:#d8dfd7;padding:30px 24px;text-align:center;font-size:11px;letter-spacing:.06em}
+    footer strong{color:#d7bf8d;font-weight:500}
+    .reveal{opacity:0;transform:translateY(16px);transition:opacity .65s ease,transform .65s ease}
+    .reveal.visible{opacity:1;transform:none}
+    @media(max-width:800px){
+      .nav-wrap{min-height:66px}.menu-btn{display:block}
+      nav{display:none;position:absolute;top:66px;left:0;right:0;background:var(--forest);padding:16px 24px 22px;flex-direction:column;align-items:flex-start;gap:17px;border-top:1px solid #ffffff22}
+      nav.open{display:flex}
+      .hero-inner{grid-template-columns:1fr}
+      .hero-copy{padding:66px 24px 45px}
+      .hero-photo{min-height:300px;grid-row:1}
+      .hero-photo:after{background:linear-gradient(0deg,var(--forest),transparent 55%)}
+      .facts{grid-template-columns:1fr;padding:0 16px}
+      .fact{padding:18px 22px}.fact+.fact{border-left:1px solid var(--line);border-top:0}
+      main{padding:0 18px}section{padding-top:70px}
+      .section-head{grid-template-columns:48px 1fr;gap:10px}
+      .history-grid{grid-template-columns:1fr}
+      .card img{height:245px}
+      .map-layout{grid-template-columns:1fr}
+      .map-frame{min-height:330px}
+      .culture-banner{grid-template-columns:1fr}
+      .culture-banner img{min-height:220px;max-height:280px}
+    }
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}*{transition:none!important}}
+  </style>
+</head>
+<body>
+  <div class="topline"></div>
+  <header>
+    <div class="nav-wrap">
+      <a class="brand" href="#inicio">CARABAYLLO<span>MEMORIA · IDENTIDAD · TERRITORIO</span></a>
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="menu">MENÚ ☰</button>
+      <nav id="menu" aria-label="Navegación principal">
+        <a href="#historia">Historia</a><a href="#ubicacion">Ubicación</a><a href="#cultura">Cultura</a><a href="#gastronomia">Gastronomía</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="hero" id="inicio">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <div class="eyebrow">Distrito de Lima · Perú</div>
+        <h1>Carabayllo:<br><em>memoria, identidad</em> y territorio</h1>
+        <p>Un recorrido por el pasado milenario, el patrimonio y las tradiciones que dan carácter al valle del río Chillón.</p>
+        <a class="button" href="#historia">Explorar el distrito <span aria-hidden="true">↘</span></a>
+      </div>
+      <div class="hero-photo">
+        <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1400&q=85" alt="Paisaje de montañas que evoca el territorio andino" fetchpriority="high">
+        <div class="photo-note">Lima Norte · Valle del Chillón</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="facts">
+    <div class="fact"><strong>1571</strong><span>Fundación histórica reconocida</span></div>
+    <div class="fact"><strong>Río Chillón</strong><span>Valle que articula el territorio</span></div>
+    <div class="fact"><strong>Patrimonio vivo</strong><span>Arqueología, historia y comunidad</span></div>
+  </div>
+
+  <main>
+    <section id="historia">
+      <div class="section-head reveal">
+        <div class="section-number">01 / HISTORIA</div>
+        <div><h2>Un pasado que sigue presente</h2><p class="section-intro">La historia de Carabayllo atraviesa miles de años: desde los primeros grupos humanos del valle del Chillón hasta las comunidades agrícolas, la colonia, la independencia y el crecimiento de Lima Norte.</p></div>
+      </div>
+
+      <div class="culture-banner reveal">
+        <img src="https://images.unsplash.com/photo-1605537964076-3cb0ea2ff588?auto=format&fit=crop&w=1100&q=80" alt="Restos arqueológicos en un paisaje árido" loading="lazy">
+        <div><span class="tag">Antes de la colonia</span><h3>Un valle habitado desde tiempos antiguos</h3><p>El valle del Chillón ofreció agua, recursos y rutas de comunicación a poblaciones que vivieron de la pesca, la recolección, la caza y la agricultura. La municipalidad recoge referencias a ocupaciones humanas de hace más de 10 000 años en la zona de Chivateros, así como a centros ceremoniales posteriores.</p><p>Complejos arqueológicos como Huacoy y Chocas evidencian la organización de antiguas sociedades y la importancia del valle mucho antes de la formación del distrito actual.</p></div>
+      </div>
+
+      <div class="history-grid" style="margin-top:20px">
+        <article class="card reveal">
+          <div class="card-image"><img src="https://images.unsplash.com/photo-1603565816030-6b389eeb23cb?auto=format&fit=crop&w=900&q=80" alt="Arquitectura de piedra antigua" loading="lazy"></div>
+          <div class="card-body"><span class="tag">Sociedades prehispánicas</span><h3>La presencia Colli</h3><p>Durante el periodo prehispánico tardío, el señorío Colli tuvo influencia en la parte baja y media del Chillón. La historia local recuerda su organización y resistencia ante la expansión inca. La fortaleza de Collique fue uno de sus principales centros políticos.</p></div>
+        </article>
+        <article class="card reveal">
+          <div class="card-image"><img src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=900&q=80" alt="Iglesia y arquitectura colonial" loading="lazy"></div>
+          <div class="card-body"><span class="tag">29 de junio de 1571</span><h3>Fundación de San Pedro</h3><p>Durante el virreinato se estableció el pueblo de San Pedro de Carabayllo. La fecha del 29 de junio de 1571 es reconocida como su fundación histórica. El pueblo se convirtió en un centro administrativo y religioso del valle, y es considerado un núcleo histórico de Lima Norte.</p></div>
+        </article>
+        <article class="card reveal">
+          <div class="card-image"><img src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=900&q=80" alt="Construcción tradicional de valor histórico" loading="lazy"></div>
+          <div class="card-body"><span class="tag">Siglos XVI–XVIII</span><h3>Iglesia y haciendas</h3><p>La iglesia de San Pedro comenzó a construirse a fines del siglo XVI y se completó a inicios del XVII. Al mismo tiempo, las haciendas transformaron la economía rural. Este proceso también estuvo marcado por el despojo de tierras indígenas y el trabajo forzado de distintos grupos de población.</p></div>
+        </article>
+      </div>
+
+      <div class="culture-banner reveal">
+        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1000&q=80" alt="Paisaje de valle" loading="lazy">
+        <div><span class="tag">Independencia · 1821</span><h3>Punchauca: una reunión decisiva</h3><p>El 2 de junio de 1821, José de San Martín y el virrey José de la Serna se reunieron en la casa hacienda de Punchauca para conversar sobre el futuro político del Perú. Las negociaciones no lograron un acuerdo, pero el encuentro convirtió a Punchauca en un lugar importante de la historia de la independencia.</p><p>La casa hacienda es hoy uno de los espacios patrimoniales más significativos de Carabayllo y recuerda el papel estratégico que tuvo el valle como acceso hacia Lima.</p></div>
+      </div>
+
+      <div class="history-grid" style="margin-top:20px">
+        <article class="card reveal">
+          <div class="card-image"><img src="https://images.unsplash.com/photo-1590736969955-71cc94901144?auto=format&fit=crop&w=900&q=80" alt="Paisaje agrícola" loading="lazy"></div>
+          <div class="card-body"><span class="tag">Siglo XIX</span><h3>La vida republicana</h3><p>Tras la independencia, las haciendas siguieron concentrando gran parte de las tierras y la producción agrícola. El 2 de enero de 1857 se promulgó la norma que dio origen a la municipalidad distrital, fecha vinculada a la creación municipal de Carabayllo.</p></div>
+        </article>
+        <article class="card reveal">
+          <div class="card-image"><img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=900&q=80" alt="Campos de cultivo" loading="lazy"></div>
+          <div class="card-body"><span class="tag">Siglo XX</span><h3>La reforma agraria</h3><p>En 1969, la Reforma Agraria cambió la propiedad de muchas haciendas y dio paso a cooperativas campesinas. Décadas después, parte de las tierras agrícolas se parceló y el crecimiento urbano avanzó sobre zonas del valle.</p></div>
+        </article>
+        <article class="card reveal">
+          <div class="card-image"><img src="https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=900&q=80" alt="Crecimiento urbano" loading="lazy"></div>
+          <div class="card-body"><span class="tag">Carabayllo actual</span><h3>De valle agrícola a Lima Norte</h3><p>La expansión de Lima transformó la vida del distrito: crecieron las urbanizaciones y los asentamientos, mientras algunas áreas rurales y sitios patrimoniales permanecieron. Carabayllo conserva una combinación singular de ciudad, agricultura e historia.</p></div>
+        </article>
+      </div>
+      <div class="food-note reveal"><strong>Una idea clave:</strong> Carabayllo es importante no solo por su antigüedad, sino porque su territorio ayuda a comprender la historia del valle del Chillón, la independencia y la transformación de Lima Norte.</div>
+    </section>
+
+    <section id="ubicacion">
+      <div class="section-head reveal">
+        <div class="section-number">02 / UBICACIÓN</div>
+        <div><h2>Entre la ciudad y el valle</h2><p class="section-intro">Carabayllo se encuentra al noreste de la provincia de Lima, en ambas márgenes del río Chillón. Su territorio reúne zonas urbanas, áreas agrícolas y espacios de valor histórico.</p></div>
+      </div>
+      <div class="map-layout reveal">
+        <div class="map-copy">
+          <span class="eyebrow">Referencia geográfica</span>
+          <h3>Carabayllo, Lima, Perú</h3>
+          <p>Explora el distrito en el mapa interactivo. Puedes acercar, alejar y abrir Google Maps para consultar rutas y sectores.</p>
+          <div class="meta">Valle del río Chillón · Lima Norte</div>
+          <p><a class="button" href="https://www.google.com/maps/search/?api=1&query=Distrito+de+Carabayllo%2C+Lima%2C+Per%C3%BA" target="_blank" rel="noopener">Abrir Google Maps ↗</a></p>
+        </div>
+        <iframe class="map-frame" title="Mapa de Carabayllo en Google Maps" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=Distrito%20de%20Carabayllo%2C%20Lima%2C%20Per%C3%BA&t=&z=12&ie=UTF8&iwloc=&output=embed"></iframe>
+      </div>
+    </section>
+
+    <section id="cultura">
+      <div class="section-head reveal">
+        <div class="section-number">03 / CULTURA</div>
+        <div><h2>Identidad que merece conservarse</h2><p class="section-intro">El patrimonio de Carabayllo conecta la arqueología, la arquitectura histórica y el paisaje del valle.</p></div>
+      </div>
+      <div class="history-grid">
+        <article class="card reveal">
+          <div class="card-image"><img src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=900&q=80" alt="Templo y arquitectura tradicional" loading="lazy"></div>
+          <div class="card-body"><span class="tag">Arquitectura</span><h3>Iglesia de San Pedro</h3><p>Es uno de los símbolos históricos del distrito. Su conservación permite reconocer la presencia colonial y la continuidad del pueblo tradicional.</p></div>
+        </article>
+        <article class="card reveal">
+          <div class="card-image"><img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=900&q=80" alt="Paisaje de cerros y valle" loading="lazy"></div>
+          <div class="card-body"><span class="tag">Patrimonio arqueológico</span><h3>Huacoy y Chocas</h3><p>Estos sitios forman parte del legado prehispánico del valle. Su protección es clave para que las nuevas generaciones conozcan la historia local.</p></div>
+        </article>
+        <article class="card reveal">
+          <div class="card-image"><img src="https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=900&q=80" alt="Entorno natural con vegetación" loading="lazy"></div>
+          <div class="card-body"><span class="tag">Paisaje y comunidad</span><h3>El valle del Chillón</h3><p>La relación entre el río, los cultivos y los asentamientos humanos ha influido durante siglos en la vida y la identidad del distrito.</p></div>
+        </article>
+      </div>
+      <div class="culture-banner reveal">
+        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1000&q=80" alt="Paisaje natural de valle" loading="lazy">
+        <div><span class="tag">Memoria colectiva</span><h3>Conservar también es conocer</h3><p>Los sitios arqueológicos y las construcciones históricas necesitan cuidado. Conocer su valor ayuda a protegerlos frente al deterioro y al crecimiento urbano.</p></div>
+      </div>
+    </section>
+
+    <section id="gastronomia">
+      <div class="section-head reveal">
+        <div class="section-number">04 / GASTRONOMÍA</div>
+        <div><h2>Sabores del valle y cocina campestre</h2><p class="section-intro">La oferta gastronómica local combina restaurantes campestres con platos populares de la cocina peruana. La municipalidad destaca propuestas como el cuy y el chancho al palo.</p></div>
+      </div>
+      <div class="history-grid">
+        <article class="card reveal">
+          <div class="card-image"><img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=900&q=80" alt="Carne asada servida en una mesa" loading="lazy"></div>
+          <div class="card-body"><span class="tag">Cocina campestre</span><h3>Chancho al palo</h3><p>Una preparación a fuego abierto que destaca en la oferta de restaurantes campestres de Carabayllo y sus alrededores.</p></div>
+        </article>
+        <article class="card reveal">
+          <div class="card-image"><img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=80" alt="Plato tradicional servido con acompañamientos" loading="lazy"></div>
+          <div class="card-body"><span class="tag">Tradición rural</span><h3>Cuy</h3><p>El cuy aparece entre las opciones mencionadas por la municipalidad para los restaurantes campestres del distrito.</p></div>
+        </article>
+        <article class="card reveal">
+          <div class="card-image"><img src="https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=900&q=80" alt="Comida peruana con ingredientes frescos" loading="lazy"></div>
+          <div class="card-body"><span class="tag">Productos del valle</span><h3>Sabores de temporada</h3><p>La agricultura del valle del Chillón produce hortalizas y frutas que abastecen mercados de Lima y forman parte de la actividad económica local.</p></div>
+        </article>
+      </div>
+      <div class="food-note">Nota: las fotografías gastronómicas son ilustrativas; los platos y productos descritos se basan en información municipal y agraria.</div>
+    </section>
+
+    <div class="sources">
+      <strong>Fuentes para conocer más</strong><br>
+      Municipalidad de Carabayllo — <a href="https://web.municarabayllo.gob.pe/distrito/reseniahistorica" target="_blank" rel="noopener">Reseña histórica</a> ·
+      <a href="https://web.municarabayllo.gob.pe/distrito/ficha" target="_blank" rel="noopener">Ficha del distrito</a> ·
+      <a href="https://web.municarabayllo.gob.pe/areas/desarrollo-economico" target="_blank" rel="noopener">Turismo y gastronomía</a> ·
+      MINCETUR — <a href="https://consultasenlinea.mincetur.gob.pe/fichaInventario/index.aspx?cod_Ficha=5727" target="_blank" rel="noopener">Pueblo San Pedro de Carabayllo</a>.<br>
+      Las imágenes externas se cargan desde internet; para una presentación definitiva, se recomienda reemplazarlas por fotografías propias o con licencia de uso.
+    </div>
+  </main>
+  <footer><strong>CARABAYLLO</strong> · Memoria, identidad y territorio<br>Hecho por: · Leonardo Vilela y equipo de emprendimiento</footer>
+
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const menu = document.getElementById('menu');
+    menuBtn.addEventListener('click', () => {
+      const isOpen = menu.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', String(isOpen));
+    });
+    menu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      menu.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded', 'false');
+    }));
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {threshold: 0.12});
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    const sections = document.querySelectorAll('main section');
+    const navLinks = document.querySelectorAll('nav a');
+    const sectionObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          navLinks.forEach(link => link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id));
+        }
+      });
+    }, {rootMargin: '-25% 0px -60% 0px'});
+    sections.forEach(section => sectionObserver.observe(section));
+  </script>
+</body>
+</html>
